@@ -1,0 +1,21 @@
+<%= form_for @game do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div>
+    <%= f.label :min_players %>
+    <%= f.text_field :min_players %>
+  </div>
+  <div>
+    <%= f.label :max_players %>
+    <%= f.text_field :max_players %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class='clearfix'>
+    <div class="left-nav">
+      <ul>
+        <li><%= link_to "Home", groups_path %></li>
+      </ul>
+    </div>
+    <div class="right-nav">
+      <ul>
+        <li><%= link_to "Add Group", new_group_path %></li>
+      </ul>
+    </div>
+  </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<%= yield %>
-
+  <div class="content">
+    <%= yield %>
+  </div>
 </body>
 </html>
