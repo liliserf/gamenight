@@ -8,16 +8,14 @@
 </head>
 <body>
   <header class='clearfix'>
-    <div class="left-nav">
-      <ul>
-        <li><%= link_to "Home", groups_path %></li>
-      </ul>
-    </div>
-    <div class="right-nav">
-      <ul>
-        <li><%= link_to "Add Group", new_group_path %></li>
-      </ul>
-    </div>
+    <span><%= link_to "Home", games_path %></span>
+    <span><%= link_to "Add a Game", new_game_path %></span>
+    <% if current_user %>
+      <span><%= link_to "Edit Profile", edit_user_path(current_user) %></span>
+    <% end %>
+    <ul class="hmenu">
+      <%= render 'devise/menu/login_items' %>
+    </ul>
   </header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

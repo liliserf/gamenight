@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :email, presence: true
+
   has_many :games
-  has_many :owned_groups, foreign_key: "owner_id", class_name: "Group"
-  has_many :memberships
-  has_many :groups, through: :memberships
 end

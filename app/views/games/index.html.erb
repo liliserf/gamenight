@@ -5,7 +5,10 @@
       <th align="left">Game</th>
       <th align="left">Min Players</th>
       <th align="left">Max Players</th>
-      <th align="left">Available?</th>
+      <th align="left">Available to Borrow?</th>
+      <th align="left">Owner</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -21,6 +24,13 @@
           <% else %>
             <td>No</td>
           <% end %>
+          <% if game.user.name %>
+            <td><%= game.user.name %></td>
+          <% else %>
+            <td><%= game.user.email %></td>
+          <% end %>
+          <td><%= link_to "Edit Game", edit_game_path(game)%></td>
+          <td><%= link_to 'Delete Game', game, method: :delete %></td>
         </tr>
       <% end %>
     <% else %>
